@@ -1,0 +1,11 @@
+{
+    "name": "Number Converter",
+    "version": "1.0.0",
+    "description": "Convert numbers between hex/decimal/ASCII",
+    "manifest_version": 3,
+    "author": "Navoda Perera",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Number Converter"
+    }
+}
