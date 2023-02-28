@@ -7,13 +7,13 @@ function handleDecimalInput(e) {
         asciiInput.value = "";
     }
     else {
-        /* Decimal to Hex */
+        /* Decimal -> Hex */
         var hexVal = decVal.toString(16);
         if (hexVal.length % 2 != 0) {
             hexVal = '0' + hexVal;
         }
 
-        /* Decimal to ASCII */
+        /* Hex -> ASCII */
         var asciiVal = "";
         for (var i = 0; i < hexVal.length; i += 2) {
             hexChar = hexVal.substr(i, 2);
@@ -39,10 +39,10 @@ function handleHexInput(e) {
         return;
     }
 
-    /* Hex to Decimal */
+    /* Hex -> Decimal */
     decVal = parseInt(hexVal, 16);
 
-    /* Hex to ASCII */
+    /* Hex -> ASCII */
     var paddedHexVal = hexVal;
     /* Front pad with a zero if the length is not even */
     if (hexVal.length % 2 != 0) {
@@ -64,11 +64,12 @@ function handleAsciiInput(e) {
     var asciiVal = e.target.value;
     var hexVal = "";
 
-    /* ASCII to Hex */
+    /* ASCII -> Hex */
     for (var i = 0; i < asciiVal.length; i++) {
         hexVal += asciiVal.charCodeAt(i).toString(16);
     }
 
+    /* Hex -> Decimal */
     const decVal = parseInt(hexVal, 16);
 
     decimalInput.value = decVal;
