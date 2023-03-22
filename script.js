@@ -1,3 +1,30 @@
+/* 
+    Author: Navoda Perera
+    Description: Conversion scripts 
+    Features: 
+        - Update converted values in real-time while typing, deleting, cutting and pasting.
+        - Option to show decimal values separated into bytes
+        - Option to type in decimal values along with characters, that get ignored 
+            (e.g. IP address: 192.169.1.2 -> C0A80102)
+        - Option to add a custom delimiter for hex bytes (space, 0x)
+*/
+
+/* Input elements */
+const decimalInput = document.getElementById("decimal-input");
+const hexInput = document.getElementById("hex-input");
+const asciiInput = document.getElementById("ascii-input");
+
+/* Add event listeners */
+decimalInput.addEventListener("input", handleDecimalInput);
+decimalInput.addEventListener("propertychange", handleDecimalInput);
+
+hexInput.addEventListener("input", handleHexInput);
+hexInput.addEventListener("propertychange", handleHexInput);
+
+asciiInput.addEventListener("input", handleAsciiInput);
+asciiInput.addEventListener("propertychange", handleAsciiInput);
+
+
 function handleDecimalInput(e) {
     var decVal = e.target.value;
     decVal = parseInt(decVal);
@@ -76,16 +103,3 @@ function handleAsciiInput(e) {
     hexInput.value = hexVal;
 };
 
-/* Add event listeners */
-const decimalInput = document.getElementById("decimal-input");
-const hexInput = document.getElementById("hex-input");
-const asciiInput = document.getElementById("ascii-input");
-
-decimalInput.addEventListener("input", handleDecimalInput);
-decimalInput.addEventListener("propertychange", handleDecimalInput);
-
-hexInput.addEventListener("input", handleHexInput);
-hexInput.addEventListener("propertychange", handleHexInput);
-
-asciiInput.addEventListener("input", handleAsciiInput);
-asciiInput.addEventListener("propertychange", handleAsciiInput);
